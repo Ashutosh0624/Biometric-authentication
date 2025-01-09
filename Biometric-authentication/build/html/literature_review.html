@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Literature Review &#8212; Biometric authentication using Facial recognition  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=686e5160" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Methodology" href="methodology.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="literature-review">
+<h1>Literature Review<a class="headerlink" href="#literature-review" title="Link to this heading">¶</a></h1>
+<section id="artificial-intelligence-ai-and-machine-learning">
+<h2>2.1 Artificial Intelligence (AI) and Machine Learning<a class="headerlink" href="#artificial-intelligence-ai-and-machine-learning" title="Link to this heading">¶</a></h2>
+<p><strong>Artificial Intelligence</strong> is a field of computer science that empowers computers with the ability
+to make decisions and respond intelligently, much like the human mind, without external interference.
+It enables computers to perform tasks that require intelligence (Copeland, 2022).</p>
+</section>
+<section id="artificial-intelligence-domains">
+<h2>2.1.1 Artificial Intelligence Domains<a class="headerlink" href="#artificial-intelligence-domains" title="Link to this heading">¶</a></h2>
+<p><strong>Machine Learning</strong> is a subset of AI that allows machines to predict outcomes by learning from data
+using statistical methods. The efficiency and learning experience of a machine improve significantly
+with the application of machine learning. Input data can take various forms, such as images, videos,
+or numeric data.</p>
+<p>Machine learning algorithms are widely used across various sectors, including e-commerce, robotics,
+and autonomous vehicles. Their flexibility and optimization make them suitable for high-end real-time
+applications.</p>
+</section>
+<section id="computer-vision-and-opencv">
+<h2>2.2 Computer Vision and OpenCV<a class="headerlink" href="#computer-vision-and-opencv" title="Link to this heading">¶</a></h2>
+<p>Computer vision, a sub-domain of AI, enables computers to interpret visual data (e.g., images or videos)
+and act accordingly (IBM, 2022).</p>
+</section>
+<section id="deep-learning">
+<h2>2.2.1 Deep Learning<a class="headerlink" href="#deep-learning" title="Link to this heading">¶</a></h2>
+<p>Deep learning is a subset of machine learning and works on the principles of the human brain. It uses
+artificial neurons to process large datasets, ensuring effective decision-making.</p>
+</section>
+<section id="opencv">
+<h2>2.2.2 OpenCV<a class="headerlink" href="#opencv" title="Link to this heading">¶</a></h2>
+<p>OpenCV is an open-source computer vision library designed for real-time applications. It provides
+various modules for tasks such as image processing, video analysis, object detection, and face
+recognition.</p>
+</section>
+<section id="face-detection-using-haar-cascade-classifiers">
+<h2>2.2.3 Face Detection using Haar Cascade Classifiers<a class="headerlink" href="#face-detection-using-haar-cascade-classifiers" title="Link to this heading">¶</a></h2>
+<p>Face detection is the process of identifying a human face in an image or video. Haar cascade classifiers
+are particularly efficient for this task. The process involves:</p>
+<ul class="simple">
+<li><p><strong>Adaboost Training</strong>: Identifies the best features out of all Haar features to form strong classifiers.</p></li>
+<li><p><strong>Cascade Classifiers</strong>: Groups Haar features into stages, applying classifiers at each stage to
+detect regions of interest (OpenCV, 2022).</p></li>
+</ul>
+</section>
+<section id="facial-recognition-algorithms-in-opencv">
+<h2>2.2.4 Facial Recognition Algorithms in OpenCV<a class="headerlink" href="#facial-recognition-algorithms-in-opencv" title="Link to this heading">¶</a></h2>
+<p>OpenCV provides three main facial recognition algorithms:</p>
+<ol class="arabic simple">
+<li><p><strong>Eigenfaces</strong>: Uses principal component analysis (PCA) for dimensionality reduction and noise
+elimination (Mallick, 2018).</p></li>
+<li><p><strong>Fischer Faces</strong>: Based on Fischer’s Linear Discriminant (FDL) analysis, it performs class-specific
+dimensionality reduction for image classification (Anggo &amp; Arapu, 2018).</p></li>
+<li><p><strong>Local Binary Patterns Histogram (LBPH)</strong>: Known for its simplicity and efficiency, LBPH compares
+pixel values of the region of interest and generates histograms for training and recognition.</p></li>
+</ol>
+</section>
+<section id="steps-in-lbph">
+<h2>2.2.5 Steps in LBPH:<a class="headerlink" href="#steps-in-lbph" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Determine Nearest Neighbors</strong>: Using the K-nearest neighbor algorithm, compare center pixel
+values with neighbors.</p></li>
+<li><p><strong>Binary to Decimal Conversion</strong>: Convert binary values from comparisons into decimal format for
+histogram representation.</p></li>
+<li><p><strong>Histogram Comparison</strong>: Compare the histograms of test images with trained histograms and
+calculate the Euclidean distance to evaluate similarity (Hussain, et al., 2022).</p></li>
+</ol>
+<p><strong>Equation 1: Euclidean Distance</strong></p>
+<div class="math notranslate nohighlight">
+\[D = \sqrt{\sum_{i=1}^n (histogram1_i - histogram2_i)^2}\]</div>
+<p>LBPH is chosen for this project due to its advantages over Eigenfaces and Fischer Faces, including
+execution time, precision, and ease of implementation (Ahsan, et al., 2021).</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Biometric authentication using Facial recognition</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="abstract.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Literature Review</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#artificial-intelligence-ai-and-machine-learning">2.1 Artificial Intelligence (AI) and Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#artificial-intelligence-domains">2.1.1 Artificial Intelligence Domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#computer-vision-and-opencv">2.2 Computer Vision and OpenCV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deep-learning">2.2.1 Deep Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opencv">2.2.2 OpenCV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#face-detection-using-haar-cascade-classifiers">2.2.3 Face Detection using Haar Cascade Classifiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#facial-recognition-algorithms-in-opencv">2.2.4 Facial Recognition Algorithms in OpenCV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#steps-in-lbph">2.2.5 Steps in LBPH:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="methodology.html">Methodology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="discussion.html">Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conclusion.html">Conclusion and Future Work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="introduction.html" title="previous chapter">Introduction</a></li>
+      <li>Next: <a href="methodology.html" title="next chapter">Methodology</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Ashutosh Kumar Tiwari.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.1.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/literature_review.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
