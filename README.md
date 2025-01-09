@@ -55,7 +55,7 @@ The project focuses on:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/<your-username>/Biometric-authentication.git
+   git clone https://github.com/Ashutosh0624/Biometric-authentication.git
    ```
 2. Navigate to the project directory:
    ```bash
