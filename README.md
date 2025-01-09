@@ -125,6 +125,6 @@ Performance results under test conditions:
 
 ---
 
-**Author**: [Your Name]  
+**Author**: Ashutosh Kumar Tiwari  
 **License**: MIT  
-**Repository**: [GitHub Link](https://github.com/<your-username>/Biometric-authentication)
+**Repository**: [GitHub Link](https://github.com/Ashutosh0624/Biometric-authentication)
