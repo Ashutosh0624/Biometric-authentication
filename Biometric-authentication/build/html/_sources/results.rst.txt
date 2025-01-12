@@ -29,12 +29,14 @@ The purpose of this test case was to measure the model’s performance as the tr
    d2 = \frac{w1 \times Fl}{w2}
 
 **Output**:
-Figure 16 illustrates the confidence % variation with training data. The results showed improvement in confidence % with increased training data, reaching saturation at approximately 92.33%.
+Figure 5 illustrates the confidence % variation with training data. The results showed improvement in confidence % with increased training data, reaching saturation at approximately 92.33%.
 
-.. image:: _static/results_train.png
+.. figure:: _static/Figure5a.png
    :alt: Light intensity test cases
    :width: 80%
    :align: center
+
+   Figure 5: Confidence % variation with training data.
 
 4.2 Test Case 2: Performance Analysis by Varying Distance
 ---------------------------------------------------------

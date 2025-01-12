@@ -8,6 +8,25 @@ Literature Review
 to make decisions and respond intelligently, much like the human mind, without external interference. 
 It enables computers to perform tasks that require intelligence (Copeland, 2022).
 
+Machine Learning is a branch or subset of Artificial Intelligence (AI) that enables machines to predict outcomes by learning the behavior of data through statistical methods. By utilizing machine learning, the efficiency of predictions and the learning experience of a machine can be significantly improved. Machine learning operates on data, which can take various forms, such as images, videos, numeric data, and more.
+
+Depending on the application objective, a machine learning algorithm can be designed and implemented. The algorithm outlines a series of operations to be performed on input data sets to achieve optimal results. These operations often include:
+
+- Cleaning the data
+- Organizing the data
+- Labeling the data
+- Defining entities
+- Training the machine using labeled data
+
+Once trained, the machine is tested with unseen or unknown data to make predictions.
+
+The described approach is a generic learning framework. However, certain applications may require alternative methods. Examples of these learning paradigms include:
+
+- Supervised learning
+- Unsupervised learning
+- Semi-supervised learning
+- Reinforcement learning. (Selig, 2022)
+
 2.1.1 Artificial Intelligence Domains
 -------------------------------------
 
@@ -62,6 +81,15 @@ OpenCV provides three main facial recognition algorithms:
    dimensionality reduction for image classification (Anggo & Arapu, 2018).
 3. **Local Binary Patterns Histogram (LBPH)**: Known for its simplicity and efficiency, LBPH compares 
    pixel values of the region of interest and generates histograms for training and recognition.
+
+
+.. image:: _static/Figure5.png
+   :alt: Light intensity test cases
+   :width: 80%
+   :align: center
+
+
+Figure 1: Face detection using OpenCV Haar Cascade classifier(Photo: Ashutosh(self))
 
 2.2.5 Steps in LBPH:
 --------------------

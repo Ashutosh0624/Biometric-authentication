@@ -1,152 +1,49 @@
+
+
 <!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<html lang="en" data-content_root="./">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Methodology &mdash; Biometric authentication using Facial recognition  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
-    <title>Methodology &#8212; Biometric authentication using Facial recognition  documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
-    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=686e5160" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
-    <script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Results" href="results.html" />
-    <link rel="prev" title="Literature Review" href="literature_review.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
+    <link rel="prev" title="Literature Review" href="literature_review.html" /> 
+</head>
 
-  
-  
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
 
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
           
-
-          <div class="body" role="main">
-            
-  <section id="methodology">
-<h1>Methodology<a class="headerlink" href="#methodology" title="Link to this heading">¶</a></h1>
-<section id="data-collection">
-<h2>3.1 Data Collection<a class="headerlink" href="#data-collection" title="Link to this heading">¶</a></h2>
-<p>As discussed in the data collection flowchart’s explanation section, the overall workflow consists of two key steps:</p>
-<ul class="simple">
-<li><p><strong>Face Features Extraction</strong></p></li>
-<li><p><strong>Storage of Collected Data</strong></p></li>
-</ul>
-</section>
-<section id="face-features-extraction">
-<h2>3.1.1 Face Features Extraction<a class="headerlink" href="#face-features-extraction" title="Link to this heading">¶</a></h2>
-<p>This step is achieved through the face extraction method, which involves:</p>
-<ol class="arabic simple">
-<li><p><strong>Accessing the Webcam</strong>:
-The webcam is accessed, and image frames are captured.</p></li>
-<li><p><strong>Image Normalization</strong>:
-- Normalization nullifies noise effects in the image.
-- Image transformations such as resizing and converting images from BGR to grayscale format are applied:
-- <strong>Resizing</strong>: Reduces the image size, focusing on face features.
-- <strong>Grayscale Conversion</strong>: Minimizes lighting variations, optimizing recognition.</p></li>
-<li><p><strong>Face Detection</strong>:
-- Pretrained Haar Cascade classifiers provided by OpenCV are used for face detection.
-- The <cite>detectMultiScale</cite> method detects objects of varying sizes and enables fine-tuning through parameters such as scale factor and min neighbors.</p></li>
-</ol>
-<p><strong>Data Collection</strong>:
-Samples are collected, varying from a minimum of 20 to a maximum of 1000 for evaluation. If no face is detected, no sample is collected.</p>
-</section>
-<section id="storage-of-collected-data">
-<h2>3.1.2 Storage of Collected Data<a class="headerlink" href="#storage-of-collected-data" title="Link to this heading">¶</a></h2>
-<ul class="simple">
-<li><p>Detected face images are stored in a specified directory with sequential labels for easier access during model training.</p></li>
-<li><p>Along with face extraction, storage instructions are embedded in a loop to ensure valid detections are saved automatically.</p></li>
-</ul>
-<p>—</p>
-</section>
-<section id="system-model-training">
-<h2>3.2 System/Model Training<a class="headerlink" href="#system-model-training" title="Link to this heading">¶</a></h2>
-</section>
-<section id="overview-of-model-training">
-<h2>3.2.1 Overview of Model Training<a class="headerlink" href="#overview-of-model-training" title="Link to this heading">¶</a></h2>
-<p>The training workflow involves:</p>
-<ol class="arabic simple">
-<li><p><strong>Accessing Collected Samples</strong>:
-- Samples are accessed using the <cite>os</cite> library, enabling navigation to directories or files.</p></li>
-<li><p><strong>Preparation of Data</strong>:
-- Samples and their labels are stored in two separate lists, which are then converted into NumPy arrays.
-- NumPy facilitates model training by representing images as height, width, and channels.</p></li>
-<li><p><strong>LBPH Face Recognizer Initialization</strong>:
-- The model is initialized using <cite>LBPHFaceRecognizer_create()</cite>, generating histograms based on pixel occurrences.</p></li>
-<li><p><strong>Training the Model</strong>:
-- Training is conducted using the <cite>model.train()</cite> method with the prepared NumPy arrays.</p></li>
-</ol>
-</section>
-<section id="face-recognition">
-<h2>3.2.2 Face Recognition<a class="headerlink" href="#face-recognition" title="Link to this heading">¶</a></h2>
-<p>The trained model is tested with input images from the webcam. The process involves:</p>
-<ol class="arabic simple">
-<li><p><strong>Detection and Prediction</strong>:
-- Faces are detected using Haar Cascade classifiers and passed to the <cite>predict()</cite> method.
-- The method returns confidence scores, which are converted into confidence percentages.</p></li>
-<li><p><strong>Threshold Settings</strong>:
-- The threshold value for confidence % is set at 75 by default, ensuring biometric authentication proceeds only if this value is exceeded.</p></li>
-<li><p><strong>Additional Methods</strong>:
-- Methods like <cite>setThreshold()</cite> and <cite>getThreshold()</cite> allow customization of threshold values.
-- Parameters like face grid dimensions (<cite>setGridX()</cite> and <cite>setGridY()</cite>) can also be modified.</p></li>
-</ol>
-</section>
-<section id="workflow-integration">
-<h2>3.2.3 Workflow Integration<a class="headerlink" href="#workflow-integration" title="Link to this heading">¶</a></h2>
-<p>The interdependencies among data collection, model training, and face recognition modules are illustrated in the overall system flowchart (Figure 15). The success of face recognition relies on proper training during the model training phase.</p>
-</section>
-<section id="confidence-percentage-parameter-calculation">
-<h2>3.3 Confidence Percentage Parameter Calculation<a class="headerlink" href="#confidence-percentage-parameter-calculation" title="Link to this heading">¶</a></h2>
-<p><strong>Concept</strong>:
-Confidence % is inversely proportional to the confidence score returned by the <cite>predict()</cite> method. Using the complement rule of probability:</p>
-<div class="math notranslate nohighlight">
-\[P(\text{not A}) = 1 - P(A)\]</div>
-<p>Where ( P(A) ) is the probability of an event (having similarity) and ( P(text{not A}) ) is its complement.</p>
-<p><strong>Formula</strong>:</p>
-<div class="math notranslate nohighlight">
-\[\text{Confidence \%} = 100 \times (1 - \text{Confidence Score})\]</div>
-<p>This calculation is key to determining the model’s accuracy during biometric authentication.</p>
-</section>
-</section>
-
-
-          </div>
           
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="Main">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">Biometric authentication using Facial recognition</a></h1>
-
-
-
-
-
-
-
-
-
-<search id="searchbox" style="display: none" role="search">
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</search>
-<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+          <a href="index.html" class="icon icon-home">
+            Biometric authentication using Facial recognition
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="abstract.html">Abstract</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
@@ -168,41 +65,157 @@ Confidence % is inversely proportional to the confidence score returned by the <
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 </ul>
 
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="literature_review.html" title="previous chapter">Literature Review</a></li>
-      <li>Next: <a href="results.html" title="next chapter">Results</a></li>
-  </ul></li>
-</ul>
-</div>
-
-
-
-
-
-
-
-
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &#169;2025, Ashutosh Kumar Tiwari.
-      
-      |
-      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.1.3</a>
-      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
-      
-      |
-      <a href="_sources/methodology.rst.txt"
-          rel="nofollow">Page source</a>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Biometric authentication using Facial recognition</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Methodology</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/methodology.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="methodology">
+<h1>Methodology<a class="headerlink" href="#methodology" title="Link to this heading"></a></h1>
+<p>Implementation</p>
+<p>The entire software has been implemented using OpenCV in the Python environment. This project can also be implemented in other languages like C++ because OpenCV is compatible with these languages as well. However, Python has been chosen for this project due to its:</p>
+<ol class="arabic simple">
+<li><p>Python bindings for OpenCV</p></li>
+<li><p>Flexibility</p></li>
+<li><p>Abundance of resources &amp; strong open source community</p></li>
+</ol>
+<section id="data-collection">
+<h2>3.1 Data Collection<a class="headerlink" href="#data-collection" title="Link to this heading"></a></h2>
+<p>As discussed in the data collection flowchart’s explanation section, the overall workflow consists of two key steps:</p>
+<ul class="simple">
+<li><p><strong>Face Features Extraction</strong></p></li>
+<li><p><strong>Storage of Collected Data</strong></p></li>
+</ul>
+</section>
+<section id="face-features-extraction">
+<h2>3.1.1 Face Features Extraction<a class="headerlink" href="#face-features-extraction" title="Link to this heading"></a></h2>
+<p>This step is achieved through the face extraction method, which involves:</p>
+<ol class="arabic simple">
+<li><p><strong>Accessing the Webcam</strong>:
+The webcam is accessed, and image frames are captured.</p></li>
+<li><p><strong>Image Normalization</strong>:
+- Normalization nullifies noise effects in the image.
+- Image transformations such as resizing and converting images from BGR to grayscale format are applied:
+- <strong>Resizing</strong>: Reduces the image size, focusing on face features.
+- <strong>Grayscale Conversion</strong>: Minimizes lighting variations, optimizing recognition.</p></li>
+<li><p><strong>Face Detection</strong>:
+- Pretrained Haar Cascade classifiers provided by OpenCV are used for face detection.
+- The <cite>detectMultiScale</cite> method detects objects of varying sizes and enables fine-tuning through parameters such as scale factor and min neighbors.</p></li>
+</ol>
+<p><strong>Data Collection</strong>:
+Samples are collected, varying from a minimum of 20 to a maximum of 1000 for evaluation. If no face is detected, no sample is collected.</p>
+</section>
+<section id="storage-of-collected-data">
+<h2>3.1.2 Storage of Collected Data<a class="headerlink" href="#storage-of-collected-data" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Detected face images are stored in a specified directory with sequential labels for easier access during model training.</p></li>
+<li><p>Along with face extraction, storage instructions are embedded in a loop to ensure valid detections are saved automatically.</p></li>
+</ul>
+</section>
+<section id="system-model-training">
+<h2>3.2 System/Model Training<a class="headerlink" href="#system-model-training" title="Link to this heading"></a></h2>
+</section>
+<section id="overview-of-model-training">
+<h2>3.2.1 Overview of Model Training<a class="headerlink" href="#overview-of-model-training" title="Link to this heading"></a></h2>
+<p>The training workflow involves:</p>
+<ol class="arabic simple">
+<li><p><strong>Accessing Collected Samples</strong>:
+- Samples are accessed using the <cite>os</cite> library, enabling navigation to directories or files.</p></li>
+<li><p><strong>Preparation of Data</strong>:
+- Samples and their labels are stored in two separate lists, which are then converted into NumPy arrays.
+- NumPy facilitates model training by representing images as height, width, and channels.</p></li>
+<li><p><strong>LBPH Face Recognizer Initialization</strong>:
+- The model is initialized using <cite>LBPHFaceRecognizer_create()</cite>, generating histograms based on pixel occurrences.</p></li>
+<li><p><strong>Training the Model</strong>:
+- Training is conducted using the <cite>model.train()</cite> method with the prepared NumPy arrays.</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/Figure2.png"><img alt="Light intensity test cases" class="align-center" src="_images/Figure2.png" style="width: 80%;" />
+</a>
+<p>Figure 2 explains the worflow of the model training phase as described above.</p>
+</section>
+<section id="face-recognition">
+<h2>3.2.2 Face Recognition<a class="headerlink" href="#face-recognition" title="Link to this heading"></a></h2>
+<p>The trained model is tested with input images from the webcam. The process involves:</p>
+<ol class="arabic simple">
+<li><p><strong>Detection and Prediction</strong>:
+- Faces are detected using Haar Cascade classifiers and passed to the <cite>predict()</cite> method.
+- The method returns confidence scores, which are converted into confidence percentages.</p></li>
+<li><p><strong>Threshold Settings</strong>:
+- The threshold value for confidence % is set at 75 by default, ensuring biometric authentication proceeds only if this value is exceeded.</p></li>
+<li><p><strong>Additional Methods</strong>:
+- Methods like <cite>setThreshold()</cite> and <cite>getThreshold()</cite> allow customization of threshold values.
+- Parameters like face grid dimensions (<cite>setGridX()</cite> and <cite>setGridY()</cite>) can also be modified.</p></li>
+</ol>
+</section>
+<section id="workflow-integration">
+<h2>3.2.3 Workflow Integration<a class="headerlink" href="#workflow-integration" title="Link to this heading"></a></h2>
+<p>The interdependencies among data collection, model training, and face recognition modules are illustrated in the overall system flowchart (Figure 3). The success of face recognition relies on proper training during the model training phase.</p>
+<a class="reference internal image-reference" href="_images/Figure_3.png"><img alt="Light intensity test cases" class="align-center" src="_images/Figure_3.png" style="width: 80%;" />
+</a>
+<p>Figure 3: Flowchart displays the workflow integeration of the overall system/model.</p>
+</section>
+<section id="confidence-percentage-parameter-calculation">
+<h2>3.3 Confidence Percentage Parameter Calculation<a class="headerlink" href="#confidence-percentage-parameter-calculation" title="Link to this heading"></a></h2>
+<p><strong>Concept</strong>:
+Confidence % is inversely proportional to the confidence score returned by the <cite>predict()</cite> method. Using the complement rule of probability:</p>
+<div class="math notranslate nohighlight">
+\[P(\text{not A}) = 1 - P(A)\]</div>
+<p>Where ( P(A) ) is the probability of an event (having similarity) and ( P(text{not A}) ) is its complement.</p>
+<p><strong>Formula</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\text{Confidence} \, \% = 100 \times (1 - \text{Confidence Score})\]</div>
+<p>This calculation is key to determining the model’s accuracy during biometric authentication.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="literature_review.html" class="btn btn-neutral float-left" title="Literature Review" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="results.html" class="btn btn-neutral float-right" title="Results" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
-    
+  <hr/>
 
-    
-  </body>
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Ashutosh Kumar Tiwari.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
 </html>

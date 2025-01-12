@@ -1,47 +1,106 @@
+
+
 <!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<html lang="en" data-content_root="./">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discussion &mdash; Biometric authentication using Facial recognition  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
-    <title>Discussion &#8212; Biometric authentication using Facial recognition  documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
-    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=686e5160" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
-    <script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Conclusion and Future Work" href="conclusion.html" />
-    <link rel="prev" title="Results" href="results.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
+    <link rel="prev" title="Results" href="results.html" /> 
+</head>
 
-  
-  
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
 
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
           
+          
+          <a href="index.html" class="icon icon-home">
+            Biometric authentication using Facial recognition
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="abstract.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="literature_review.html">Literature Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="methodology.html">Methodology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Discussion</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#performance-evaluation">5.1 Performance Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#outcome-of-varying-the-training-data">5.1.1 Outcome of Varying the Training Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#outcome-of-varying-the-distance">5.1.2 Outcome of Varying the Distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#outcome-of-face-tilt-variation">5.1.3 Outcome of Face Tilt Variation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#outcome-of-different-lighting-conditions">5.1.4 Outcome of Different Lighting Conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#outcome-of-varying-face-characteristics">5.1.5 Outcome of Varying Face Characteristics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#outcome-of-testing-with-unknown-users">5.1.6 Outcome of Testing with Unknown Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#accuracy-and-precision-evaluation">5.1.7 Accuracy and Precision Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#challenges-faced">5.2 Challenges Faced</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hardware-limitations">5.2.1 Hardware Limitations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lighting-and-weather-variations">5.2.2 Lighting and Weather Variations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pretrained-haar-cascade-classifier">5.2.3 Pretrained Haar Cascade Classifier</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="conclusion.html">Conclusion and Future Work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
 
-          <div class="body" role="main">
-            
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Biometric authentication using Facial recognition</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Discussion</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/discussion.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
   <section id="discussion">
-<h1>Discussion<a class="headerlink" href="#discussion" title="Link to this heading">¶</a></h1>
+<h1>Discussion<a class="headerlink" href="#discussion" title="Link to this heading"></a></h1>
 <section id="performance-evaluation">
-<h2>5.1 Performance Evaluation<a class="headerlink" href="#performance-evaluation" title="Link to this heading">¶</a></h2>
+<h2>5.1 Performance Evaluation<a class="headerlink" href="#performance-evaluation" title="Link to this heading"></a></h2>
 <p>The model’s performance evaluation was based on its response to the six test cases discussed in the Results section. The important outcomes observed from each test case are described below.</p>
 </section>
 <section id="outcome-of-varying-the-training-data">
-<h2>5.1.1 Outcome of Varying the Training Data<a class="headerlink" href="#outcome-of-varying-the-training-data" title="Link to this heading">¶</a></h2>
+<h2>5.1.1 Outcome of Varying the Training Data<a class="headerlink" href="#outcome-of-varying-the-training-data" title="Link to this heading"></a></h2>
 <p>It was observed that increasing the training data in each iteration improved the model’s prediction ability (confidence %).
 - <strong>Minimum Training Data</strong>: 20 images, Confidence: 89.3%
 - <strong>Maximum Training Data</strong>: 1000 images, Confidence: 92.33%</p>
@@ -49,35 +108,35 @@
 <p>The rectangular bounding box dimensions during face detection may have contributed to this saturation in confidence. Smaller bounding boxes could introduce noise and reduce the effectiveness of the trained features.</p>
 </section>
 <section id="outcome-of-varying-the-distance">
-<h2>5.1.2 Outcome of Varying the Distance<a class="headerlink" href="#outcome-of-varying-the-distance" title="Link to this heading">¶</a></h2>
+<h2>5.1.2 Outcome of Varying the Distance<a class="headerlink" href="#outcome-of-varying-the-distance" title="Link to this heading"></a></h2>
 <p>During testing, the model was trained with static images where the user was positioned at a fixed location. When tested with varying distances, the model successfully identified the user with confidence percentages above 90%, even as the user moved closer to or farther from the webcam.</p>
 <p>This test demonstrated the model’s efficiency in identifying users in motion or with slight movements. However, confidence percentages were influenced by factors such as:
 - <strong>Face Orientation</strong>: The face had to be directed toward the camera.
 - <strong>Lighting</strong>: Better performance was observed in daylight or with proper illumination.</p>
 </section>
 <section id="outcome-of-face-tilt-variation">
-<h2>5.1.3 Outcome of Face Tilt Variation<a class="headerlink" href="#outcome-of-face-tilt-variation" title="Link to this heading">¶</a></h2>
+<h2>5.1.3 Outcome of Face Tilt Variation<a class="headerlink" href="#outcome-of-face-tilt-variation" title="Link to this heading"></a></h2>
 <p>The model recognized faces successfully with up to 20-degree tilts to the left or right. Beyond this angle, prediction accuracy decreased significantly due to the inability to detect certain face features not aligned with the training dataset.</p>
 </section>
 <section id="outcome-of-different-lighting-conditions">
-<h2>5.1.4 Outcome of Different Lighting Conditions<a class="headerlink" href="#outcome-of-different-lighting-conditions" title="Link to this heading">¶</a></h2>
+<h2>5.1.4 Outcome of Different Lighting Conditions<a class="headerlink" href="#outcome-of-different-lighting-conditions" title="Link to this heading"></a></h2>
 <p>Face detection efficiency improved when light was focused on the user’s face. However:
 - When light intensity on the face and surroundings was similar, performance declined.
 - Higher light intensities (e.g., 210 Lux) yielded results comparable to those in ideal conditions.</p>
 <p>This test case highlighted that face detection depends more on face clarity than overall lighting intensity.</p>
 </section>
 <section id="outcome-of-varying-face-characteristics">
-<h2>5.1.5 Outcome of Varying Face Characteristics<a class="headerlink" href="#outcome-of-varying-face-characteristics" title="Link to this heading">¶</a></h2>
+<h2>5.1.5 Outcome of Varying Face Characteristics<a class="headerlink" href="#outcome-of-varying-face-characteristics" title="Link to this heading"></a></h2>
 <p>Testing involved variations in face characteristics (e.g., glasses, goggles) under low-light conditions. Results showed:
 - Performance was better with goggles than with transparent glasses due to reduced light reflections.
 - The model performed optimally when the user’s face was 90–120 cm from the webcam.</p>
 </section>
 <section id="outcome-of-testing-with-unknown-users">
-<h2>5.1.6 Outcome of Testing with Unknown Users<a class="headerlink" href="#outcome-of-testing-with-unknown-users" title="Link to this heading">¶</a></h2>
+<h2>5.1.6 Outcome of Testing with Unknown Users<a class="headerlink" href="#outcome-of-testing-with-unknown-users" title="Link to this heading"></a></h2>
 <p>For unknown users, the model’s precision was poor as it lacked training with those images. Precision improved significantly when trained with user-specific data.</p>
 </section>
 <section id="accuracy-and-precision-evaluation">
-<h2>5.1.7 Accuracy and Precision Evaluation<a class="headerlink" href="#accuracy-and-precision-evaluation" title="Link to this heading">¶</a></h2>
+<h2>5.1.7 Accuracy and Precision Evaluation<a class="headerlink" href="#accuracy-and-precision-evaluation" title="Link to this heading"></a></h2>
 <p>Accuracy and precision were calculated based on 100 samples:
 - <strong>True Positive (TP)</strong>: 31
 - <strong>True Negative (TN)</strong>: 65
@@ -396,7 +455,7 @@
 </table>
 </section>
 <section id="challenges-faced">
-<h2>5.2 Challenges Faced<a class="headerlink" href="#challenges-faced" title="Link to this heading">¶</a></h2>
+<h2>5.2 Challenges Faced<a class="headerlink" href="#challenges-faced" title="Link to this heading"></a></h2>
 <p>During the implementation phase of the project, the following challenges were encountered:</p>
 <ol class="arabic simple">
 <li><p><strong>Hardware Setup Limitations</strong>:
@@ -416,17 +475,17 @@
 </ol>
 </section>
 <section id="hardware-limitations">
-<h2>5.2.1 Hardware Limitations<a class="headerlink" href="#hardware-limitations" title="Link to this heading">¶</a></h2>
+<h2>5.2.1 Hardware Limitations<a class="headerlink" href="#hardware-limitations" title="Link to this heading"></a></h2>
 <p>The pre-installed webcam on the host machine (Dell G3) had limited flexibility:
 - The fixed position of the webcam restricted tests for face angle variations.
 - Lack of calibration options impacted accuracy in different test scenarios.</p>
 </section>
 <section id="lighting-and-weather-variations">
-<h2>5.2.2 Lighting and Weather Variations<a class="headerlink" href="#lighting-and-weather-variations" title="Link to this heading">¶</a></h2>
+<h2>5.2.2 Lighting and Weather Variations<a class="headerlink" href="#lighting-and-weather-variations" title="Link to this heading"></a></h2>
 <p>Testing during the day was challenging due to frequent changes in lighting caused by weather. However, testing at night yielded more consistent results.</p>
 </section>
 <section id="pretrained-haar-cascade-classifier">
-<h2>5.2.3 Pretrained Haar Cascade Classifier<a class="headerlink" href="#pretrained-haar-cascade-classifier" title="Link to this heading">¶</a></h2>
+<h2>5.2.3 Pretrained Haar Cascade Classifier<a class="headerlink" href="#pretrained-haar-cascade-classifier" title="Link to this heading"></a></h2>
 <p>Using a pretrained Haar cascade classifier was beneficial but posed challenges:
 - The model achieved low accuracy and precision for unknown users not included in the training dataset.
 - This limitation could be addressed by training a custom Haar cascade classifier tailored to the application.</p>
@@ -434,92 +493,34 @@
 </section>
 
 
+           </div>
           </div>
-          
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="results.html" class="btn btn-neutral float-left" title="Results" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="conclusion.html" class="btn btn-neutral float-right" title="Conclusion and Future Work" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Ashutosh Kumar Tiwari.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="Main">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">Biometric authentication using Facial recognition</a></h1>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
 
-
-
-
-
-
-
-
-
-<search id="searchbox" style="display: none" role="search">
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</search>
-<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="abstract.html">Abstract</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="literature_review.html">Literature Review</a></li>
-<li class="toctree-l1"><a class="reference internal" href="methodology.html">Methodology</a></li>
-<li class="toctree-l1"><a class="reference internal" href="results.html">Results</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Discussion</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#performance-evaluation">5.1 Performance Evaluation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#outcome-of-varying-the-training-data">5.1.1 Outcome of Varying the Training Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#outcome-of-varying-the-distance">5.1.2 Outcome of Varying the Distance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#outcome-of-face-tilt-variation">5.1.3 Outcome of Face Tilt Variation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#outcome-of-different-lighting-conditions">5.1.4 Outcome of Different Lighting Conditions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#outcome-of-varying-face-characteristics">5.1.5 Outcome of Varying Face Characteristics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#outcome-of-testing-with-unknown-users">5.1.6 Outcome of Testing with Unknown Users</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#accuracy-and-precision-evaluation">5.1.7 Accuracy and Precision Evaluation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#challenges-faced">5.2 Challenges Faced</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#hardware-limitations">5.2.1 Hardware Limitations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#lighting-and-weather-variations">5.2.2 Lighting and Weather Variations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#pretrained-haar-cascade-classifier">5.2.3 Pretrained Haar Cascade Classifier</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="conclusion.html">Conclusion and Future Work</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="results.html" title="previous chapter">Results</a></li>
-      <li>Next: <a href="conclusion.html" title="next chapter">Conclusion and Future Work</a></li>
-  </ul></li>
-</ul>
-</div>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &#169;2025, Ashutosh Kumar Tiwari.
-      
-      |
-      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.1.3</a>
-      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
-      
-      |
-      <a href="_sources/discussion.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-    
-
-    
-  </body>
+</body>
 </html>
